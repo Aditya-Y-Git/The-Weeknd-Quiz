@@ -14,9 +14,6 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   var activeScreen = 'start-screen';
 
-  // switchScreen() function helps to switch between the screens and it should be executed
-  // when the button on the start screen is pressed. So we need to pass this function to
-  // the start screen widget
   void switchScreen() {
     setState(() {
       activeScreen = 'questions-screen';
@@ -25,6 +22,9 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(context) {
+    // switchScreen() function helps to switch between the screens and it should be executed
+    // when the button on the start screen is pressed. So we need to pass this function to
+    // the start screen widget
     Widget screenWidget = StartScreen(switchScreen);
 
     if (activeScreen == 'questions-screen') {
